@@ -1,4 +1,4 @@
-@media screen and (max-width: 1023.98px) {
+@media screen and (max-width: 1023.98px) and (min-width: 768px) {
   /* ========================================================================== */
   /*                                   HEADER                                   */
   /* ========================================================================== */
@@ -56,7 +56,7 @@
 
   .sec2 {
     background-size: 80%;
-    min-height: 350px;
+    min-height: 400px;
 
     // img
     .sec2-img {
@@ -68,7 +68,7 @@
 
     // text
     .sec2-text {
-      margin-top: 4rem;
+      margin-top: 2.5rem;
     }
   }
 
@@ -85,7 +85,7 @@
   /* ========================================================================== */
 
   .footer {
-    padding: 3rem 5rem;
+    padding: 3rem 4rem;
     margin-top: 1rem;
 
     .foot-info {

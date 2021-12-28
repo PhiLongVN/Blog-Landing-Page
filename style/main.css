@@ -177,9 +177,9 @@ body {
   color: white;
 }
 
-.head-toggle {
+
   /* ---------------------------- box= menu + login --------------------------- */
-}
+
 
 .head-toggle .box-head {
   width: 100%;
@@ -403,7 +403,7 @@ body {
 
 .sec1 .sec1-text p {
   max-width: 65ch;
-  font-size: 0.9rem;
+  font-size: 1.2rem;
   padding: 2rem 0 4rem 0;
   opacity: 0.7;
   font-weight: 500;
@@ -418,6 +418,7 @@ body {
   position: relative;
   min-height: 400px;
   border-radius: 0 100px 0 100px;
+  margin-top: 3rem;
   background-image: url(../images/bg-pattern-circles.svg);
   background-repeat: no-repeat;
   background-size: 80%;
@@ -437,7 +438,7 @@ body {
   padding-right: 2rem;
   text-align: left;
   margin-left: auto;
-  margin-top: 8rem;
+  margin-top: 5rem;
 }
 
 .sec2 .sec2-text h2 {
@@ -450,7 +451,7 @@ body {
 .sec2 .sec2-text p {
   max-width: 60ch;
   color: #dddde5;
-  font-size: 0.9rem;
+  font-size: 1.2rem;
 }
 
 /* ========================================================================== */
@@ -481,7 +482,7 @@ body {
 }
 
 .sec3 .sec3-text p {
-  font-size: 1rem;
+  font-size: 1.2rem;
   color: #1e1f20;
   margin-top: 2rem;
   margin-bottom: 4rem;
@@ -505,7 +506,7 @@ body {
 .footer img {
   min-width: 100px;
   min-height: 40px;
-  margin-left: 6rem;
+  margin-left: 4rem;
 }
 
 .footer .foot-info {
@@ -535,19 +536,19 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 0.8rem;
-  margin-right: 11rem;
+  margin-right: 9rem;
 }
 
 .footer .foot-info .info-title span {
   color: white;
-  font-size: 1rem;
+  font-size: 1.5rem;
   font-weight: 800;
 }
 
 .footer .foot-info .info-title a {
   text-decoration: none;
   color: white;
-  font-size: 0.8rem;
+  font-size: 1rem;
 }
 
 .footer .foot-info .info-title a:hover {
@@ -555,6 +556,10 @@ body {
 }
 
 @media screen and (max-width: 767.98px) {
+  .wrapper {
+    width: 100%;
+    overflow-x: hidden;
+  }
   /* ========================================================================== */
   /*                                   .HEADER                                  */
   /* ========================================================================== */
@@ -566,7 +571,24 @@ body {
     background-image: url(../images/bg-pattern-intro-desktop.svg), -webkit-gradient(linear, left top, right top, from(#ff856e), to(#a73f44));
     background-image: url(../images/bg-pattern-intro-desktop.svg), linear-gradient(to right, #ff856e, #a73f44);
   }
-  /* ---------------------------------- menu ---------------------------------- */
+  .header .header-intro h1 {
+    font-size: 2rem;
+    text-align: center;
+  }
+  .header .header-intro span {
+    font-size: 1.1rem;
+    text-align: center;
+  }
+  .header .header-intro .intro-bt {
+    gap: 1rem;
+  }
+  .header .header-intro .intro-bt h2 {
+    padding: 1rem 1rem;
+  }
+  /* ---------------------------------- toggle ---------------------------------- */
+  .header .head-toggle {
+    position: relative;
+  }
   .header .head-toggle .close {
     display: block;
     padding: 1rem;
@@ -577,6 +599,7 @@ body {
     background: #a29797;
   }
   .header .head-toggle .box-head {
+    border-radius: 20px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -594,10 +617,15 @@ body {
     padding: 1rem 2rem;
     width: 80%;
     position: absolute;
-    left: 50%;
-    top: 18%;
+    left: 150%;
+    top: 80%;
     -webkit-transform: translateX(-50%);
             transform: translateX(-50%);
+    -webkit-transition: left 1s ease;
+    transition: left 1s ease;
+  }
+  .header .head-toggle .box-head.active {
+    left: 50%;
   }
   .header .head-toggle .menu {
     width: 100%;
@@ -615,10 +643,13 @@ body {
         -ms-flex-direction: column;
             flex-direction: column;
     text-align: center;
-    margin-right: unset;
+    margin: auto;
   }
   .header .head-toggle .menu .menu-main {
     width: 100%;
+  }
+  .header .head-toggle .menu .menu-main .arrow-main {
+    margin-bottom: 1rem;
   }
   .header .head-toggle .menu .menu-main h2 {
     color: black;
@@ -630,12 +661,19 @@ body {
     position: relative;
     width: 100%;
     background: #efeff1;
-    height: 0px;
+    max-height: 0px;
+    overflow: hidden;
+    padding: 0;
+    opacity: 1;
+    visibility: visible;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
   }
   .header .head-toggle .menu .menu-list a {
     -ms-flex-item-align: center;
         -ms-grid-row-align: center;
         align-self: center;
+    width: 100%;
   }
   .header .head-toggle .login {
     display: -webkit-box;
@@ -652,9 +690,242 @@ body {
         -ms-flex-direction: column;
             flex-direction: column;
   }
+  .header .head-toggle .login h2 {
+    color: white;
+    background: #f0584179;
+  }
+  .header .head-toggle .login h2:hover {
+    background: #ff856e;
+  }
+  .head-toggle .menu .menu1.active > .list1 {
+    max-height: 300px;
+    padding: 1rem 0;
+    -webkit-transform-origin: top;
+            transform-origin: top;
+  }
+  .head-toggle .menu .menu1.active > .arrow-main > h2 {
+    color: black;
+    text-decoration: underline;
+    opacity: 1;
+  }
+  .head-toggle .menu .menu1:hover > .arrow-main > h2 {
+    color: black;
+    text-decoration: underline;
+    opacity: 1;
+  }
+  .head-toggle .menu .menu1:hover > .arrow-main > .arrow {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  .head-toggle .menu .menu1.active > .arrow-main > .arrow {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+  .head-toggle .menu .menu3.active > .list3 {
+    max-height: 300px;
+    padding: 1rem 0;
+    -webkit-transform-origin: top;
+            transform-origin: top;
+  }
+  .head-toggle .menu .menu3.active > .arrow-main > h2 {
+    color: black;
+    text-decoration: underline;
+    opacity: 1;
+  }
+  .head-toggle .menu .menu3:hover > .arrow-main > h2 {
+    color: black;
+    text-decoration: underline;
+    opacity: 1;
+  }
+  .head-toggle .menu .menu3:hover > .arrow-main > .arrow {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  .head-toggle .menu .menu3.active > .arrow-main > .arrow {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+  .head-toggle .menu .menu2.active > .list2 {
+    max-height: 300px;
+    padding: 1rem 0;
+    -webkit-transform-origin: top;
+            transform-origin: top;
+  }
+  .head-toggle .menu .menu2.active > .arrow-main > h2 {
+    color: black;
+    text-decoration: underline;
+    opacity: 1;
+  }
+  .head-toggle .menu .menu2:hover > .arrow-main > h2 {
+    color: black;
+    text-decoration: underline;
+    opacity: 1;
+  }
+  .head-toggle .menu .menu2:hover > .arrow-main > .arrow {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  .head-toggle .menu .menu2.active > .arrow-main > .arrow {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+  /* ========================================================================== */
+  /*                                    SEC1                                    */
+  /* ========================================================================== */
+  .sec1 {
+    background-image: url(../images/illustration-editor-mobile.svg);
+    background-size: contain;
+    background-position-x: center;
+    background-position-y: 23%;
+  }
+  .sec1 h2 {
+    font-size: 2rem;
+    font-weight: 500;
+  }
+  .sec1 .sec1-text {
+    padding: 2rem;
+    width: 100%;
+    text-align: center;
+    margin-top: 30rem;
+  }
+  .sec1 .sec1-text h3 {
+    font-size: 1.7rem;
+    font-weight: 600;
+    padding: 0 3rem;
+    text-align: center;
+  }
+  /* ========================================================================== */
+  /*                                    SEC2                                    */
+  /* ========================================================================== */
+  .sec2 {
+    background-size: 100%;
+    background-position-x: center;
+    background-position-y: -20vh;
+    min-height: 600px;
+    margin-top: 13rem;
+  }
+  .sec2 .sec2-img {
+    width: 100%;
+    height: 50%;
+    top: -40vh;
+    padding: 0 3rem;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+  .sec2 .sec2-text {
+    width: 100%;
+    padding-left: 0rem;
+    padding-right: 0rem;
+    text-align: center;
+    margin-left: unset;
+    margin-top: 18rem;
+    padding: 3rem 2rem;
+    padding-bottom: 5rem;
+  }
+  /* ========================================================================== */
+  /*                                    SEC3                                    */
+  /* ========================================================================== */
+  .sec3 {
+    background-image: url(../images/illustration-laptop-mobile.svg);
+    background-position: center top;
+    background-size: 80%;
+  }
+  .sec3 .sec3-text {
+    width: 100%;
+    margin-left: unset;
+    text-align: center;
+    margin: 1rem 2rem;
+    margin-top: 22rem;
+  }
+  /* ========================================================================== */
+  /*                                   FOOTER                                   */
+  /* ========================================================================== */
+  .footer {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    margin-top: 3rem;
+    padding: 3rem;
+  }
+  .footer img {
+    margin: auto;
+  }
+  .footer .foot-info {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .footer .foot-info .info-title {
+    margin: 2rem;
+  }
 }
 
-@media screen and (max-width: 1023.98px) {
+@media screen and (max-width: 520px) {
+  .sec2 .sec2-img {
+    top: -15%;
+  }
+  .sec2 .sec2-text {
+    margin-top: 15rem;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .header .head-toggle {
+    padding: 1.5rem 2rem;
+  }
+  .header .header-intro h1 {
+    font-size: 1.8rem;
+  }
+  .header .header-intro span {
+    padding: 0 0.5rem;
+  }
+  .header .header-intro .intro-bt {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 2rem;
+  }
+  .sec1 {
+    background-position-y: 16%;
+  }
+  .sec1 h2 {
+    padding-top: 4rem;
+  }
+  .sec1 .sec1-text {
+    margin-top: 12rem;
+  }
+  .sec2 .sec2-img {
+    top: -12%;
+  }
+  .sec2 .sec2-text {
+    margin-top: 10rem;
+  }
+  .sec3 .sec3-text {
+    margin-top: 15rem;
+  }
+}
+
+@media screen and (max-width: 1023.98px) and (min-width: 768px) {
   /* ========================================================================== */
   /*                                   HEADER                                   */
   /* ========================================================================== */
@@ -689,7 +960,7 @@ body {
   /* ========================================================================== */
   .sec2 {
     background-size: 80%;
-    min-height: 350px;
+    min-height: 400px;
   }
   .sec2 .sec2-img {
     width: 60%;
@@ -698,7 +969,7 @@ body {
     top: -20%;
   }
   .sec2 .sec2-text {
-    margin-top: 4rem;
+    margin-top: 2.5rem;
   }
   /* ========================================================================== */
   /*                                    SEC3                                    */
@@ -710,7 +981,7 @@ body {
   /*                                   FOOTER                                   */
   /* ========================================================================== */
   .footer {
-    padding: 3rem 5rem;
+    padding: 3rem 4rem;
     margin-top: 1rem;
   }
   .footer .foot-info .info-title {

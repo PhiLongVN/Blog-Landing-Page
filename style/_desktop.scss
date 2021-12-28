@@ -16,6 +16,7 @@
 
 // HEADER===========================================================================================
 .header {
+
   width: 100%;
   min-height: 500px;
 
@@ -100,14 +101,12 @@
 
 //   TOOGLE======== LOGIN == MENU == LOGO==================================================================
 .head-toggle {
-
   /* ---------------------------- box= menu + login --------------------------- */
   .box-head {
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-  
   }
   .close {
     display: none;
@@ -297,7 +296,7 @@
 
     p {
       max-width: 65ch;
-      font-size: 0.9rem;
+      font-size: 1.2rem;
       padding: 2rem 0 4rem 0;
       opacity: 0.7;
       font-weight: 500;
@@ -315,6 +314,7 @@
   position: relative;
   min-height: 400px;
   border-radius: 0 100px 0 100px;
+  margin-top: 3rem;
 
   background-image: url(../images/bg-pattern-circles.svg);
   background-repeat: no-repeat;
@@ -336,7 +336,7 @@
     padding-right: 2rem;
     text-align: left;
     margin-left: auto;
-    margin-top: 8rem;
+    margin-top: 5rem;
 
     h2 {
       font-size: 1.7rem;
@@ -348,7 +348,7 @@
     p {
       max-width: 60ch;
       color: #dddde5;
-      font-size: 0.9rem;
+      font-size: 1.2rem;
     }
   }
 }
@@ -382,7 +382,7 @@
     }
 
     p {
-      font-size: 1rem;
+      font-size: 1.2rem;
       color: #1e1f20;
       margin-top: 2rem;
       margin-bottom: 4rem;
@@ -407,7 +407,7 @@
   img {
     min-width: 100px;
     min-height: 40px;
-    margin-left: 6rem;
+    margin-left: 4rem;
   }
 
   .foot-info {
@@ -421,18 +421,18 @@
       justify-content: center;
       flex-direction: column;
       gap: 0.8rem;
-      margin-right: 11rem;
+      margin-right: 9rem;
 
       span {
         color: white;
-        font-size: 1rem;
+        font-size: 1.5rem;
         font-weight: 800;
       }
 
       a {
         text-decoration: none;
         color: white;
-        font-size: 0.8rem;
+        font-size: 1rem;
 
         &:hover {
           text-decoration: underline;
