@@ -177,9 +177,9 @@ body {
   color: white;
 }
 
-
+.head-toggle {
   /* ---------------------------- box= menu + login --------------------------- */
-
+}
 
 .head-toggle .box-head {
   width: 100%;
@@ -590,13 +590,44 @@ body {
     position: relative;
   }
   .header .head-toggle .close {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    height: 55px;
     display: block;
     padding: 1rem;
     border-radius: 20px;
     cursor: pointer;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
   }
   .header .head-toggle .close:hover {
-    background: #a29797;
+    background: rgba(255, 241, 241, 0.15);
+  }
+  .header .head-toggle .close img:nth-of-type(1) {
+    display: none;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+  .header .head-toggle .close img:nth-of-type(2) {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+  .header .head-toggle .close.active > img:nth-of-type(1) {
+    display: block;
+  }
+  .header .head-toggle .close.active > img:nth-of-type(2) {
+    display: none;
   }
   .header .head-toggle .box-head {
     border-radius: 20px;
